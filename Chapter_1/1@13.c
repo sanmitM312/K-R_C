@@ -42,7 +42,7 @@ void vertical_histogram(){
 	
 	state = OUT;
 
-	while((c = getchar()) != '\n' && c != EOF){
+	while((c = getchar()) != EOF){
 		if(c == ' ' || c == '\t' || c == '\n'){
 			if(state == IN){
 				wl[cc] += 1;
@@ -59,28 +59,81 @@ void vertical_histogram(){
 		}
 	}
 	
-	printf("\n3 \'|||\' equals 1 count. [LENGTH]: [COUNT]\n");
+	// DEBUG STUFF
 	for(int i = 0; i < 21; i++){
-		printf("\n%4d:",i+1);
-		for(int k=0; k < wl[i]; k++){
-			printf("|||");
-		}
+		printf("%d: ",wl[i]);
 	}
-/*	
+
 	printf("\n");
-	for(int k=25; k >=0; k--){
+	for(int k=19; k >=0; k--){
 		for(int l=0; l < 21; l++){
 			if(k<=wl[l]){
+				
 				printf("OK%d%d ",k,wl[l]);
 			}
 		}
 		printf("\n");
 	}
-*/
+
 }
 int main(){
 
-	//horizontal_histogram();
-	vertical_histogram();
+	horizontal_histogram();
+	//vertical_histogram();
 	
 }
+
+/*
+
+HI ALL 123 1234
+
+3 '|||' equals 1 count. [LENGTH]: [COUNT]
+
+   1:|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   2:|||
+   3:||||||
+   4:|||
+   5:
+   6:
+   7:
+   8:
+   9:
+  10:
+  11:
+  12:
+  13:
+  14:
+  15:
+  16:
+  17:
+  18:
+  19:
+  20:
+  21:
+  
+  H I ALL HJHKHK
+
+3 '|||' equals 1 count. [LENGTH]: [COUNT]
+
+   1:|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   2:
+   3:|||
+   4:
+   5:
+   6:|||
+   7:
+   8:
+   9:
+  10:
+  11:
+  12:
+  13:
+  14:
+  15:
+  16:
+  17:
+  18:
+  19:
+  20:
+  21: 
+*/
