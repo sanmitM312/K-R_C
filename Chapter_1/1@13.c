@@ -9,6 +9,10 @@ void horizontal_histogram(){
 	
 	int c, state, cc = 0;
 	
+	for(int i=0; i < 21; i++){
+		wl[i] = 0;
+	}
+	
 	state = OUT;
 	while((c = getchar()) != EOF){
 		if(c == ' ' || c == '\t' || c == '\n'){
@@ -41,7 +45,10 @@ void vertical_histogram(){
 	int c, state, cc = 0;
 	
 	state = OUT;
-
+	
+	for(int i=0; i < 21; i++){
+		wl[i] = 0;
+	}
 	while((c = getchar()) != EOF){
 		if(c == ' ' || c == '\t' || c == '\n'){
 			if(state == IN){
@@ -52,34 +59,31 @@ void vertical_histogram(){
 		}else{
 			if(state == OUT){
 				state = IN;
-			}else{
-				cc++;
 			}
+			cc++;
 			
 		}
 	}
 	
-	// DEBUG STUFF
-	for(int i = 0; i < 21; i++){
-		printf("%d: ",wl[i]);
-	}
-
-	printf("\n");
-	for(int k=19; k >=0; k--){
-		for(int l=0; l < 21; l++){
+	for(int k=25; k > 0; k--){
+		for(int l=0; l < 20; l++){
+			//printf("%d ", wl[l]);
 			if(k<=wl[l]){
 				
-				printf("OK%d%d ",k,wl[l]);
+				printf("%3s  ","==");
 			}
+			
 		}
 		printf("\n");
 	}
+	for(int i=0; i < 21; i++)
+		printf("%3d  ",i+1);
 
 }
 int main(){
 
-	horizontal_histogram();
-	//vertical_histogram();
+	//horizontal_histogram();
+	vertical_histogram();
 	
 }
 
