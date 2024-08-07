@@ -1,10 +1,11 @@
 #include<stdio.h>
 
+// calculating base^p
 int main(){
-	int p,base,n;
+	int p,base = 2,n = 5;
 	
-	p = 1,n = 10;
-	for(base = 1; base <= 10; base++){
+	p = 2;
+	for(int i = 1; i <= n; i++){
 	  p = p * base;
 	}
 	
