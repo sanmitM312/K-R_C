@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+
 int main(){
 	
 	// code for 2.2
@@ -12,12 +13,14 @@ int main(){
 	
 	while(i < lim-1){
 		c = getchar();
-		if(c != EOF){
-		    if(c != '\n'){
-		    	s[i] = c;
-		    }	
+		if (c == '\n'){
+		    	lim = 0; // clever of breaking the loop
+		}else if(c == EOF){
+		   	lim = 0; // clever of breaking the loop
+		}else{
+			s[i++] = c;
 		}
-		++i;
+		
 	}
 	s[i] = '\0';
 	
