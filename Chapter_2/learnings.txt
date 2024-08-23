@@ -1,0 +1,1 @@
+1. for bitfields, AND with a mask does extraction, OR with a mask does insertion
