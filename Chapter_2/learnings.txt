@@ -1,1 +1,8 @@
 1. for bitfields, AND with a mask does extraction, OR with a mask does insertion
+2. precedence of the bitwise operators ^,&,| are less than == or != , so must be enclosed in parentheses 
+3. order of evaluation of a function's arguments are random , eg : printf("%d",++n, power(2,n)) might not be equal ++n, printf("%d",n,power(2,n))
+4. a[i] = i++, a[i] has old or new value is dependent upon the compiler.
+5. In the context of switch,  With the exception of multiple labels for a single computation, fall-throughs should be used sparingly and commented.
+	Example case 1 : case 2 : ... case 9 :  ndigit[a]++; break; 
+	is an example of fallthrough switch cases.
+6. Always add break; as the last statement for default, defensive programming.
